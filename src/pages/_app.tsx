@@ -1,5 +1,5 @@
 import React from 'react';
-import App, { AppContext, AppProps } from 'next/app';
+import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'src/theme';
 import Layout from 'src/components/Layout/Layout';
@@ -15,9 +15,3 @@ export default function NextApp({ Component, pageProps }: AppProps) {
     </ThemeProvider>
   );
 }
-
-NextApp.getInitialProps = async (appContext: AppContext) => {
-  const appProps = await App.getInitialProps(appContext);
-  const { query } = appContext.ctx;
-  return { ...appProps, query };
-};

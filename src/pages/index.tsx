@@ -6,6 +6,7 @@ const Index: React.FC = () => {
   return (
     <>
       <Head>
+        <title>KRAPSTACK</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <Wrapper>Welcome to Krapstack boilerplate!</Wrapper>
