@@ -7,7 +7,7 @@ let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 function createIsomorphLink() {
   const { HttpLink } = require('@apollo/client/link/http');
   return new HttpLink({
-    uri: process.env.API_URL || 'http://localhost:3000/graphql',
+    uri: process.env.API_URL || 'http://localhost:4000/graphql',
     credentials: 'same-origin',
   });
 }

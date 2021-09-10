@@ -1,17 +1,23 @@
 import React from 'react';
 import Head from 'next/head';
-import { Wrapper } from './about';
+import { Container, P } from 'src/atoms';
+import { useAuth } from 'src/hooks';
 
-const Index: React.FC = () => {
+const Main: React.FC = () => {
+  const { isLoggedIn, user } = useAuth();
   return (
     <>
       <Head>
         <title>KRAPSTACK</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <Wrapper>Welcome to Krapstack boilerplate!</Wrapper>
+      <Container paddingTop="50px">
+        <P center>
+          Welcome <b>{isLoggedIn && user.username}</b> to Krapstack boilerplate!
+        </P>
+      </Container>
     </>
   );
 };
 
-export default Index;
+export default Main;

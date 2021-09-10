@@ -1,23 +1,19 @@
 import React from 'react';
-import { useRouter } from 'next/router';
-import Header from '../Header/Header';
-import { LayoutWrapper, Footer } from './Layout.style';
+import { Container } from 'src/atoms';
+import { Header } from '../Header';
 
-type LayoutProps = {
-  className?: string;
-  token?: string;
-};
+interface ILayout {
+  children: any;
+}
 
-const Layout: React.FunctionComponent<LayoutProps> = ({ className, children, token }) => {
-  const { pathname } = useRouter();
-
+export const Layout = ({ children }: ILayout) => {
   return (
-    <LayoutWrapper className={`layoutWrapper ${className}`}>
-      <Header className={`home`} token={token} pathname={pathname} />
+    <Container>
+      {
+        // @ts-ignore
+        <Header />
+      }
       {children}
-      <Footer>@Copyright 2020</Footer>
-    </LayoutWrapper>
+    </Container>
   );
 };
-
-export default Layout;

@@ -1,19 +1,34 @@
 import React from 'react';
-import HeaderWrapper from './Header.style';
-import { Menu } from './Menu/Menu';
+import { Button, Link } from 'src/atoms';
+import { Routes } from 'src/contants';
+import { Menu } from 'src/contants/Menu';
+import { withApollo } from 'src/helper';
+import { useAuth } from 'src/hooks';
+import { Container, Left, Right } from './Style';
 
-type Props = {
-  className?: string;
-  token?: string;
-  pathname?: string;
-};
-
-const Header: React.FC<Props> = ({ className }) => {
+const Main = () => {
+  const { isLoggedIn, onLogout } = useAuth();
   return (
-    <HeaderWrapper className={className}>
-      <Menu logo="https://bankingthefuture.com/wp-content/uploads/2019/04/dummylogo.jpg" />
-    </HeaderWrapper>
+    <Container>
+      <Left>
+        <Link label={Menu.Home} href={Routes.Home} />
+      </Left>
+      <Right>
+        {!isLoggedIn ? (
+          <>
+            <Link label={Menu.Login} href={Routes.AuthLogin} />
+            <Link label={Menu.Signup} href={Routes.AuthSignup} />
+          </>
+        ) : (
+          <Button onClick={() => onLogout()} color="primary" variant="transparent">
+            Logout
+          </Button>
+        )}
+      </Right>
+    </Container>
   );
 };
 
-export default Header;
+const Header = withApollo(Main);
+
+export { Header };

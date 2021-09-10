@@ -4,6 +4,8 @@
 
 There is a list of packages that you should be at least familiar with before starting the project. However, the best way to see a complete list of the dependencies is to check out package.json file. 
 
+###### [Demo](http://example.krapstack.io)
+
 #### Major stacks
 
 - [x] [Next.js](https://nextjs.org/)
