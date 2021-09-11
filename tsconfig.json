@@ -29,5 +29,5 @@
     "isolatedModules": true
   },
   "exclude": ["node_modules", "server", ".next", "out"],
-  "include": ["next-env.d.ts", "./src/**/*.tsx", "./src/**/*.ts"]
+  "include": ["next-env.d.ts", "./src/**/*.tsx", "./src/**/*.ts", "src/styl"]
 }
