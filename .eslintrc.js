@@ -4,12 +4,12 @@ module.exports = {
     ecmaVersion: 6,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true,
+      tsx: true,
     },
   },
   settings: {
     react: {
-      version: '16.13.1',
+      version: '17.0.2',
     },
   },
   env: {
