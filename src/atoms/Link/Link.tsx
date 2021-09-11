@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Instance from 'next/link';
 
-interface ILink {
+export interface ILink {
   href: string;
   label: string;
   icon?: React.ReactNode;
