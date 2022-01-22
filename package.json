@@ -1,7 +1,7 @@
 {
   "name": "krap-fe",
   "version": "0.2.0",
-  "description": "A boilerplate get starter for new project",
+  "description": "A Front-end boilerplate get starter for new project",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -15,7 +15,8 @@
     "build-storybook": "build-storybook",
     "release": "node release/autoTag.js",
     "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "gen": "graphql-codegen --config codegen.yml"
   },
   "license": "ISC",
   "dependencies": {
@@ -24,6 +25,10 @@
     "@apollo/react-ssr": "^4.0.0",
     "@emotion/core": "^11.0.0",
     "@emotion/styled": "^11.3.0",
+    "@graphql-codegen/cli": "^2.4.0",
+    "@graphql-codegen/typescript": "^2.4.2",
+    "@graphql-codegen/typescript-operations": "^2.2.2",
+    "@graphql-codegen/typescript-react-apollo": "^3.2.4",
     "@styled-system/theme-get": "^5.1.2",
     "@types/lodash": "^4.14.172",
     "@types/styled-system__theme-get": "^5.0.1",
