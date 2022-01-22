@@ -2,7 +2,7 @@
 
 ## Tech Stack
 
-There is a list of packages that you should be at least familiar with before starting the project. However, the best way to see a complete list of the dependencies is to check out package.json file. 
+There is a list of packages that you should be at least familiar with before starting the project. However, the best way to see a complete list of the dependencies is to check out package.json file.
 
 ###### [Demo](http://example.krapstack.io)
 
@@ -50,27 +50,35 @@ After cloning this repository, you can add your own git repository use it as the
 
 #### Move to the appropriate directory:
 
-`cd <YOUR_PROJECT_NAME>`
-
-Check out a list script below
+```
+$ cd <YOUR_PROJECT_NAME>
+```
 
 ## Available scripts
 
 #### Install node modules
 
-`npm install` or `yarn`
+```
+$ npm install or yarn
+```
 
 #### Start development
 
-`npm run dev` or `yarn dev`
+```
+$ npm run dev or yarn dev
+```
 
 #### Test
 
-`npm run test` or `yarn test`
+```
+$ npm run test or yarn test
+```
 
 #### Production build
 
-`npm run build` or `yarn build`
+```
+$ npm run build or yarn build
+```
 
 ## How can use the boilerplat
 
@@ -79,4 +87,4 @@ All folder structure is just an example to follow, you could create which folder
 
 All contributions to this boilerplate are welcome.
 
-Cheers!
+Checkout contribute guide [here](CONTRIBUTING.md).
