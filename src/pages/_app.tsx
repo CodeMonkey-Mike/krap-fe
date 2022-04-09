@@ -7,7 +7,7 @@ import { Layout } from 'src/components';
 import 'antd/dist/antd.css';
 import { AuthProvider } from 'src/contexts';
 
-export default function NextApp({ Component, pageProps }: AppProps) {
+export default function NextApp({ Component, pageProps }: AppProps & any) {
   return (
     <AuthProvider>
       <ThemeProvider theme={theme}>
