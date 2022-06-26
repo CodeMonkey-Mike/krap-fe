@@ -7,10 +7,32 @@ let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 function createIsomorphLink() {
   const { HttpLink } = require('@apollo/client/link/http');
   return new HttpLink({
-    uri: process.env.API_URL || 'http://localhost:4000/graphql',
-    credentials: 'same-origin',
+    uri: process.env.NEXT_PUBLIC_API_URL,
+    credentials: 'include',
   });
 }
+
+const createApiEndpoint = () => {
+  if (
+    process.env.NODE_ENV == 'development' &&
+    process.env.NEXT_PUBLIC_API_URL?.includes('localhost')
+  ) {
+    return process.env.NEXT_PUBLIC_API_URL;
+  }
+  return [
+    process.env.NEXT_PUBLIC_API_URL,
+    process.env.NEXT_PUBLIC_API_PR,
+    '.',
+    process.env.NEXT_PUBLIC_API_DOMAIN,
+    process.env.NEXT_PUBLIC_API_PATH,
+  ].join('');
+};
+
+export const client = new ApolloClient({
+  ssrMode: typeof window === 'undefined',
+  uri: createApiEndpoint(),
+  cache: new InMemoryCache(),
+});
 
 function createApolloClient(initialState = {}) {
   return new ApolloClient({
@@ -41,7 +63,7 @@ export function useApollo(initialState: NormalizedCacheObject) {
   return store;
 }
 
-export function withApollo(PageComponent: NextPage, {} = {}) {
+export function withApollo(PageComponent: NextPage & any, {} = {}) {
   const WithApollo = ({
     apolloClient,
     apolloState,
